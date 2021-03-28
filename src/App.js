@@ -1,24 +1,17 @@
 import React from "react";
 import "./App.css"
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
-    <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-
     <div className="App">
-      <h1>Olá Mundo!</h1>
+      <Navbar />
       <ul className="lista">
         <li>Vamos começar</li>
         <li>Linhas teste</li>
       </ul>
-      <p></p>
-      </div> 
-    </div>
-  )
+      </div>
+  );
 
 }
 
