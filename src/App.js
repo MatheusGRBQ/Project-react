@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
 import "./App.css"
-// import { Container } from './styles';
+import NavBar from "../src/components/NavBar/NavBar.js"
 
 function App() {
   return (
-    <div>
-      <p>Test</p>
+    <div className="App">
+      <ul className="lista">
+        <li>Vamos começar</li>
+        <li>Linhas teste</li>
+      </ul>
+      <p></p>
+      
     </div>
   )
 
