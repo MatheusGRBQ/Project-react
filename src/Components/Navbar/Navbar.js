@@ -4,7 +4,7 @@ import "./navbar.css";
 export default function Navbar(){
     return(
         <nav className="navbar">
-            <span>React Kanban</span>
+            <span>Site Oficial da HAVAN</span>
         </nav>
     );
 }

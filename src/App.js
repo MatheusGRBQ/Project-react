@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="container">
-        <TaskList title="Atrasado" onAddTask={addTask} tasks={tasks}/>
+        <TaskList title="Tarefas Pendentes HAVAN" onAddTask={addTask} tasks={tasks}/>
         <ul className="lista"></ul>
       </div>
     </div>
