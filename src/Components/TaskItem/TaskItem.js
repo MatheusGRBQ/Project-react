@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
+import "./TaskItem.css";
 
-export default function TaskItem({ id, title, taskState}) {
+export default function TaskItem({ id, title, taskState, onTaskUpdate}) {
     const [isEditing, setIsEditing] = useState(false);
     const [editableTitle, setEditableTitle] = useState(title);
 
     const onTitleChange = (event) => {
-        const newTitle = event.target.value;
+    const newTitle = event.target.value;
         setEditableTitle(newTitle);
+        onTaskUpdate(id, newTitle, taskState);
     }
 
     const onKeyPress = (event) => {
@@ -17,9 +19,18 @@ export default function TaskItem({ id, title, taskState}) {
     }
     
     if (isEditing) {
-        return <input type="text" value={editableTitle} onChange={onTitleChange} onKeyPress={onKeyPress} />;
+        return <input 
+        type="text" 
+        value={editableTitle} 
+        onChange={onTitleChange} 
+        onKeyPress={onKeyPress}
+        />;
     } else {
-        return <div onClick={(e) => setIsEditing(true)}>{editableTitle}</div>;
+        return (
+        <div>
+            <div onClick={(e) => setIsEditing(true)}>{editableTitle}</div>
+        </div>
+        );
     }
 }
 
