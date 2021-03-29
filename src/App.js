@@ -8,11 +8,13 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <TaskList title="Pendente"/>
+      <div className="container">
+      <TaskList title="Atrasado"/>
       <TaskList title="Fazendo"/>
       <TaskList title="Concluido"/>
       <ul className="lista">
       </ul>
+      </div>
       </div>
   );
 
