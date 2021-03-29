@@ -35,7 +35,13 @@ function App() {
       })
     });
 
-  }
+  };
+
+  const deleteTask = (id) => {
+    setTasks((existingTasks) => {
+      return existingTasks.filter((task) => task.id !== id);
+    });
+  };
 
   return (
     <div className="App">
@@ -46,21 +52,24 @@ function App() {
           onAddTask={addTask}
           taskState="Pendentes"
           tasks={tasks.filter((t) => t.state === "Pendentes")} 
-          onTaskUpdate={updateTask} 
+          onTaskUpdate={updateTask}
+          onDeleteTask={deleteTask}
         />
         <TaskList 
           title="Fazendo" 
           onAddTask={addTask}
           taskState="Fazendo"
           tasks={tasks.filter((t) => t.state === "Fazendo")} 
-          onTaskUpdate={updateTask} 
+          onTaskUpdate={updateTask}
+          onDeleteTask={deleteTask}
         />
         <TaskList 
-          title="Completas" 
+          title="Completa" 
           onAddTask={addTask}
-          taskState="Completas"
-          tasks={tasks.filter((t) => t.state === "Completas")} 
-          onTaskUpdate={updateTask} 
+          taskState="Completa"
+          tasks={tasks.filter((t) => t.state === "Completa")} 
+          onTaskUpdate={updateTask}
+          onDeleteTask={deleteTask}
         />
       </div>
     </div>
