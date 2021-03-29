@@ -1,21 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css"
 
 import Navbar from "./Components/Navbar/Navbar";
 import TaskList from "./Components/TaskList/TaskList"
 
+const task = {
+  id: 0,
+  title: 'Nova Tarefa',
+  state: 'pendente'
+};
+
+let idAcc = 0;
+  const generateId = () => {
+    idAcc = idAcc + 1;
+    return idAcc;
+};
+
 function App() {
+  const [tasks, setTasks] = useState([]);
+
+  const addTask = (title, state) => {
+    const newTask = {
+      id: generateId(),
+      title,
+      state
+  };
+  
+  setTasks((existingTasks) => {
+    return [...existingTasks, newTask];
+  });
+}
+
   return (
     <div className="App">
       <Navbar />
       <div className="container">
-      <TaskList title="Atrasado"/>
-      <TaskList title="Fazendo"/>
-      <TaskList title="Concluido"/>
-      <ul className="lista">
-      </ul>
+        <TaskList title="Atrasado" onAddTask={addTask} tasks={tasks}/>
+        <ul className="lista"></ul>
       </div>
-      </div>
+    </div>
   );
 
 }
