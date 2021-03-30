@@ -75,5 +75,5 @@ html {
     padding: 8px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 7px;
+    grid-gap: 8px;
   }
